@@ -1,0 +1,23 @@
+import json
+
+f =open("身份证码值对照表.txt",mode="r",encoding="UTF-8" )
+
+content =  f.read()
+
+content_dict = json.loads(content) #转换为字典类型
+
+address = input("请输入身份证前6位：")
+
+x=0
+
+for key, val in content_dict.items():
+
+    if key==address:
+
+        print(val)
+
+        x=0
+
+if x==1:
+
+    print("查无此地")
